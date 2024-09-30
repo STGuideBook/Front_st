@@ -1,38 +1,106 @@
-.App {
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #F1F3F7;
+}
+
+.body {
   text-align: center;
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.wrap-container {
+  height: auto;
+  min-height: 100%;
+  padding-bottom: 238px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.contents {
+  min-height: 750px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+/* a {
+  text-decoration: none;
+}
+
+nav {
+  position: relative;
+  margin: auto;
   display: flex;
-  flex-direction: column;
+  background-color: #ffffff;
+  width: 1460px;
+  height: 53px;
+  border-radius: 100px;
+  font-family: 'Pretendard-Regular';
+  font-size: 20px;
+  font-weight: 800;
+  margin-top: 10px;
+  padding: 0 74px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.215);
+}
+
+.nav-bar {
+  background-color: white;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-btns {
+  background-color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-btns a {
+  margin: 0 30px;
 }
+
+.nav-logo {
+  position: absolute;
+  top: 62%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} 
+
+.nav-logo a{
+  background-color: white;
+}
+
+.nav-logo img{
+  width: 75px;
+  background-color: white;
+}
+
+.nav-login {
+  position: relative;
+  margin-left: 910px;
+  background-color: white;
+}
+
+.nav-login a, .nav-login img{
+  background-color: white;
+}
+
+.nav-login img {
+  position: absolute;
+  top: 50%;
+  left: 150%;
+  transform: translate(-50%, -50%);
+}
+
+.nav-btns a, .nav-login a{
+  background-color: white;
+  color: #494949;
+}
+
+.nav-btns a:hover, .nav-login:hover , .nav-login a:hover {
+  color: #6562FF;
+  cursor: pointer;
+} */
+
+
