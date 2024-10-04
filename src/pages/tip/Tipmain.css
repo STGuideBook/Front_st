@@ -89,7 +89,7 @@
     right: 30px;
     width: 75px;
     height: 75px;
-    background-image: url('/Users/hoom/Desktop/st-guide 복사본/public/assets/img/tip/write.svg');
+    background-image: url('../../img/tip/write.svg');
 }
 
 hr {
@@ -209,7 +209,7 @@ hr {
     right: 44px;
     width: 30px;
     height: 30px;
-    background-image: url('/Users/hoom/Desktop/st-guide 복사본/public/assets/img/tip/favorite.svg');
+    background-image: url('../../img/tip/favorite.svg');
 }
 
 
