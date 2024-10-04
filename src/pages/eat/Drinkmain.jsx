@@ -1,5 +1,5 @@
 
-const Foodmain = () => {
+const Drinkmain = () => {
 
     return <div className="main">
         <h3>먹거리 {'>'} 주점</h3>
@@ -10,4 +10,4 @@ const Foodmain = () => {
     </div>
 }
 
-export default Foodmain;
+export default Drinkmain;

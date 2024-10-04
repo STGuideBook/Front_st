@@ -1,0 +1,247 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+}
+
+.create-wrap {
+    margin-top: 89px;
+    display: inline-block;
+}
+
+.input {
+    border: none;
+    outline: none;
+    background-color: white;
+}
+
+.input-wrap {
+    background-color: white;
+    border-radius: 100px;
+    width: 512px;
+    height: 43px;
+    position: relative;
+}
+
+.input-wrap > input {
+    position: absolute;
+    top: 22%;
+    left: 5%;
+    font-size: 20px;
+    width: 319px;
+    font-family: 'Pretendard-Regular';
+}
+
+.tip-box-up {
+    display: flex;
+    width: 1235px; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tip-box-up > h3 {
+    font-size: 28px;
+    font-family: 'Pretendard-Regular';
+}
+
+.input-wrap > img {
+    background-color: white;
+    position: absolute;
+    top: 10%;
+    right: 3%;
+}
+
+.tip-box {
+    margin-top: 36px;
+    width: 1235px;
+    height: 357.5px;
+}
+
+.tip-box > form {
+    border-radius: 30px;
+    position: relative;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+}
+
+.tip-title {
+    position: absolute;
+    top: 27px;
+    left: 40px;
+    font-size: 28px;
+    width: 617px;
+}
+
+.tip-body {
+    position: absolute;
+    top: 89px;
+    left: 40px;
+    height: 230px;
+    width: 1154px;
+    font-size: 20px;
+    resize: none;
+}
+
+.tip-submit {
+    border-radius: 30px;
+    position: absolute;
+    bottom: 19.5px;
+    right: 30px;
+    width: 75px;
+    height: 75px;
+    background-image: url('/Users/hoom/Desktop/st-guide 복사본/public/assets/img/tip/write.svg');
+}
+
+hr {
+    position: absolute;
+    top: 70px;
+    left: 40px;
+    width: 1158px;
+    color: #B4B4B4;
+}
+
+.tip-list {
+    display: inline-block;
+}
+
+.tip-list-item, .tip-menu-intro {
+    width: 1235px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid #B4B4B4;
+}
+
+.tip-list-item > p, .tip-list-item > a {
+    font-family: 'Pretendard-Regular';
+    font-size: 20px;
+}
+
+.tip-item-id, .tip-item-title, .tip-item-date, .tip-item-heart {
+    position: absolute;
+    color: #494949;
+}
+
+.tip-item-id {
+    width: 109px;
+    left: 7px;
+}
+
+.tip-item-title {
+    left: 307px
+}
+
+.tip-item-date {
+    width: 146px;
+    left: 973px;
+}
+
+.tip-item-heart {
+    width: 67px;
+    right: 26px;
+}
+
+.tip-menu-select {
+    align-items: center;
+    position: relative;
+    display: flex;
+    margin-top: 31.5px;
+    width: 1235px;
+    height: 41px;
+}
+
+.tip-menu-select::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 146px; /* 밑줄 시작 위치를 왼쪽에서 25%로 조정 */
+    width: 84px; /* 밑줄 길이를 50%로 조정 */
+    height: 3px; /* 밑줄 두께 */
+    background-color: #6562FF; /* 밑줄 색상 */
+  }
+
+.menu-date-select, .menu-heart-select {
+    width: 100px;
+    font-size: 22px;
+    font-weight: bold;
+    position: absolute;
+}
+
+.menu-date-select {
+    right: 136px;
+    color: #627DFF;
+}
+
+.menu-heart-select {
+    right: 12px;
+    color: #A8A8A8;
+}
+
+.tip-menu-intro {
+    margin-top: 24px;
+    margin-bottom: 1px;
+}
+
+.tip-intro-id, .tip-intro-title, .tip-intro-date, .tip-intro-heart {
+    font-size: 20px;
+    position: absolute;
+    color: #494949;
+    font-weight: bold;
+}
+
+.tip-intro-id {
+    width: 112px;
+    left: 7px;
+}
+
+.tip-intro-title {
+    width: 100px;
+    left: 508px;
+}
+
+.tip-intro-date {
+    width: 100px;
+    left: 997px;
+}
+
+.tip-intro-heart {
+    right: 44px;
+    width: 30px;
+    height: 30px;
+    background-image: url('/Users/hoom/Desktop/st-guide 복사본/public/assets/img/tip/favorite.svg');
+}
+
+
+
+
+/* 페이징 네비게이션 스타일 */
+.pagination {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+    margin-top: 90px;
+  }
+  
+  .pagination-item {
+    margin: 0 5px;
+  }
+  
+  .pagination-button {
+    font-size: 20px;
+    padding: 5px 10px;
+    color: #CECECE;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .pagination-button:hover {
+    color: #585858;
+  }
+  
+  .pagination-button.active {
+    color: #585858;
+  }

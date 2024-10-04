@@ -1,8 +1,7 @@
-import { useState } from 'react';
 import './Foodmain.css'
+import Itemmain from './components/Itemmain';
 
 const Foodmain = () => {
-    const [activeIndex, setActiveIndex] = useState(0);
 
     return <div className="main">
         <h3>먹거리 {'>'} 식사</h3>
@@ -13,10 +12,7 @@ const Foodmain = () => {
             <li><a href="">2인</a></li>
             <li><a href="">3~4인 이상</a></li>
         </ul>
-            
-        <div>
-
-        </div>
+        <Itemmain title="안녕하세요" img="#"></Itemmain>
     </div>
 }
 

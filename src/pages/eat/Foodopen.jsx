@@ -4,15 +4,15 @@ import Item from './components/Item';
 const Foodopen = ()=>{
     const itemlist = [{
       title: "식사",
-      img: "assets/img/eat/food.png", 
+      img: "assets/img/eat/food.svg", 
       to: "/eat/food"
     },{
       title: "카페/디저트",
-      img: "assets/img/eat/coffee.png", 
+      img: "assets/img/eat/coffee.svg", 
       to: "/eat/coffee"
     },{
       title: "주류",
-      img: "assets/img/eat/drink.png", 
+      img: "assets/img/eat/drink.svg", 
       to: "/eat/drink"
     }]
   

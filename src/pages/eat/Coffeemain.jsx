@@ -1,5 +1,5 @@
 
-const Foodmain = () => {
+const Coffemain = () => {
 
     return <div className="main">
         <h3>먹거리 {'>'} 카페/디저트</h3>
@@ -10,4 +10,4 @@ const Foodmain = () => {
     </div>
 }
 
-export default Foodmain;
+export default Coffemain;

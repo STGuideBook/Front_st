@@ -7,6 +7,7 @@ import Food from "../pages/eat/Food";
 import Coffeemain from "../pages/eat/Coffeemain"
 import Drinkmain from "../pages/eat/Drinkmain"
 import Main from "../pages/main/Main"
+import Tip from "../pages/tip/Tip";
 
 
 export const router = createBrowserRouter([
@@ -16,7 +17,7 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: "",
-                element: <Tipmain /> // 메인 페이지
+                element: <Main /> // 메인 페이지
             },
             {
                 path: "eat",
@@ -36,6 +37,14 @@ export const router = createBrowserRouter([
                 {
                     path: "drink",
                     element: <Drinkmain /> // 주점 페이지
+                }]
+            },
+            {
+                path: "tip",
+                element: <Tip />,
+                children: [{
+                    path: "",
+                    element: <Tipmain />
                 }]
             }
         ]

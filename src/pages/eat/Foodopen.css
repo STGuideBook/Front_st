@@ -12,18 +12,19 @@
 .main {
     margin-top: 143px;
     font-family: 'Pretendard-Regular';
+    display: inline-block;
 }
   
-  .main > h3 {
+.main > h3 {
     font-size: 26px;
     color: #7E94FF;
-  }
+}
   
-  .main > h1 {
+.main > h1 {
     margin-top: 14px;
     font-size: 48px;
     color: black;
-  }
+}
   
   .categories {
     display: flex;
