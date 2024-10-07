@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'SBAggroB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.main-welcome {
+    font-size: 76px;
+    color: #1A1869;
+    font-family: 'SBAggroB';
+    margin-top: 85px;
+}
+
+.main-school-img {
+    margin-top: 54px;
+    margin-bottom: 85px;
+}
+
+.main-popular-info {
+    font-size: 28px;
+    color: #6562FF;
+    font-family: 'Pretendard-Regular';
+    font-weight: 700;
+    margin-top: 20px;
+}

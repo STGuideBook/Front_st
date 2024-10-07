@@ -1,0 +1,67 @@
+body {
+  background-color: #ffffff;
+}
+
+
+button {
+  width: 261px;
+  height: 340px;
+  border: none;
+  border-radius: 30px;
+  margin: 0 12px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #999999;
+}
+
+/* 페이지네이션 버튼 스타일 */
+.pagination {
+  display: flex;  
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+/* 버튼들을 담을 컨테이너 스타일 */
+.button-container {
+  display: flex; 
+  flex-wrap: wrap;
+  justify-content: center; 
+  gap: 12px;
+  margin-top: 19px;
+}
+
+.button-1 {
+  background-color: #96A8FE;
+}
+
+.button-2 {
+  background-color: #7E94FF;
+}
+
+.button-3 {
+  background-color: #6562FF;
+}
+
+.button-4 {
+  background-color: #96A8FE;
+}
+
+.button-5 {
+  background-color: #1A1869;
+}
+
+/* 페이지 넘김 버튼 및 페이지 번호 텍스트 스타일 */
+.pagination-text,
+.page-number {
+  font-size: 24px; 
+  color: #EBEFFF; /* 기본 텍스트 색상 */
+  cursor: pointer;
+  padding: 0 10px; 
+  user-select: none;
+}
+
+
+.page-number.active {
+  color: #6562FF; /* 선택된 페이지 번호 색상 */
+}
