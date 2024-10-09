@@ -8,6 +8,7 @@ import Coffeemain from "../pages/eat/Coffeemain"
 import Drinkmain from "../pages/eat/Drinkmain"
 import Main from "../pages/main/Main"
 import Tip from "../pages/tip/Tip";
+import TipmainServer from "../pages/tip/TipmainServer";
 
 
 export const router = createBrowserRouter([
@@ -44,7 +45,7 @@ export const router = createBrowserRouter([
                 element: <Tip />,
                 children: [{
                     path: "",
-                    element: <Tipmain />
+                    element: <TipmainServer/>
                 }]
             }
         ]
