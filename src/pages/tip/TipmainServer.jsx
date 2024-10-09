@@ -128,7 +128,7 @@ const Tipmain = () => {
   const [topics, setTopics] = useState([]);
   const [heartN, setHeart] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 10;
+  const postsPerPage = 5;
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [sortOrder, setSortOrder] = useState('date'); // 'date' 또는 'heart'
