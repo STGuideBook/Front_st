@@ -29,12 +29,12 @@ const Pagination = ({ postsPerPage, totalPosts, currentPage, setCurrentPage }) =
 
   return (
     <div>
-      <ul className="pagination">
+      <ul className="tip-pagination">
         {pageNumbers.map(number => (
-          <li key={number} className="pagination-item">
+          <li key={number} className="tip-pagination-item">
             <button
               onClick={() => {handleClick(number)}}
-              className={`pagination-button ${number === currentPage ? 'active' : ''}`}
+              className={`tip-pagination-button ${number === currentPage ? 'active' : ''}`}
             >
               {number}
             </button>
@@ -73,7 +73,7 @@ const Nav = ({ topics, onChangeMode }) => {
 };
 
 // 게시글 생성 컴포넌트
-const Create = ({ onCreate }) => {
+const Create = ({ onCreate, login }) => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
 
@@ -85,6 +85,10 @@ const Create = ({ onCreate }) => {
           <input className="input" type="text" placeholder="글 제목, 내용" />
           <img src="assets/img/tip/search.svg" alt="검색" />
         </div>
+      </div>
+      <div className={`tip-writeBtn ${login === true ? 'active' : ''}`}>
+        <div>새 글 작성하기</div>
+        <img src="assets/img/tip/pencil.svg" alt="연필 이미지" />
       </div>
       <div className="tip-box">
         <form onSubmit={event => {
@@ -132,6 +136,8 @@ const Tipmain = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [sortOrder, setSortOrder] = useState('date'); // 'date' 또는 'heart'
+
+  const [isLogin, setLogin] = useState(false);
 
   const today = new Date();
   const formattedDate = `${today.getFullYear()}.${String(today.getMonth() + 1).padStart(2, '0')}.${String(today.getDate()).padStart(2, '0')}`;
@@ -214,7 +220,7 @@ useEffect(() => {
     <div className="main">
       <h3>팁게시판</h3>
       <h1>여러분의 팁을 공유해주세요!</h1>
-      <Create onCreate={handleCreate} />
+      <Create onCreate={handleCreate} login={isLogin}/>
       <div className="tip-menu-select">
         <div 
           className={`menu-date-select ${sortOrder === 'date' ? 'active' : ''}`}

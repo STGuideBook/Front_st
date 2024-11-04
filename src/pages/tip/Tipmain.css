@@ -216,7 +216,7 @@ hr {
 
 
 /* 페이징 네비게이션 스타일 */
-.pagination {
+.tip-pagination {
     display: flex;
     list-style: none;
     justify-content: center;
@@ -224,11 +224,11 @@ hr {
     margin-top: 90px;
   }
   
-  .pagination-item {
+  .tip-pagination-item {
     margin: 0 5px;
   }
   
-  .pagination-button {
+  .tip-pagination-button {
     font-size: 20px;
     padding: 5px 10px;
     color: #CECECE;
@@ -238,10 +238,39 @@ hr {
     transition: background-color 0.3s, color 0.3s;
   }
   
-  .pagination-button:hover {
+  .tip-pagination-button:hover {
     color: #585858;
   }
   
-  .pagination-button.active {
+  .tip-pagination-button.active {
     color: #585858;
+  }
+
+  .tip-writeBtn {
+    margin-top: 15px;
+    width: 1235px;
+    height: 54px;
+    background-color: #627DFF;
+    position: relative;
+    border-radius: 30px;
+    display: flex;
+    align-items:center;
+  }
+
+  .tip-writeBtn > div {
+    color: white;
+    background-color: #627DFF;
+    width: 604px;
+    height: 43px;
+    position: absolute;
+    left: 314px;
+    font-size: 20px;
+    line-height: 41px;
+    font-weight: 600;
+  }
+
+  .tip-writeBtn > img {
+    background-color: #627DFF;
+    position: absolute;
+    left: 677px
   }
