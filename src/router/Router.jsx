@@ -8,8 +8,14 @@ import Coffeemain from "../pages/eat/Coffeemain"
 import Drinkmain from "../pages/eat/Drinkmain"
 import Main from "../pages/main/Main"
 import Tip from "../pages/tip/Tip";
+import Living from "../pages/Living/Living";
+import Nurimain from "../pages/Living/Seongrimmain";
+import Seongrimmain from "../pages/Living/Seongrimmain";
+import Bulammain from "../pages/Living/Bulammain";
+import KBmain from "../pages/Living/KBmain";
+import Sulimmain from "../pages/Living/Sulimmain";
 
-
+// 
 export const router = createBrowserRouter([
     {
         path: "",
@@ -45,6 +51,34 @@ export const router = createBrowserRouter([
                 children: [{
                     path: "",
                     element: <Tipmain />
+                }]
+            },
+            {
+                path: "living",
+                element: <Living />,
+                children: [{
+                    path: "",
+                    element: <Living />
+                },
+                {
+                    path: "nuri",
+                    element: <Nurimain />
+                },
+                {
+                    path: "seongrim",
+                    element: <Seongrimmain />
+                },
+                {
+                    path: "bulam",
+                    element: <Bulammain />
+                },
+                {
+                    path: "kb",
+                    element: <KBmain />
+                },
+                {
+                    path: "sulim",
+                    element: <Sulimmain />
                 }]
             }
         ]

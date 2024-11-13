@@ -10,7 +10,7 @@ const Header = () => {
           <div className="nav-btns">
             <Link to={"/eat"}>먹거리</Link>
             <a>학업</a>
-            <a>주거</a>
+            <Link to={"/living"}>주거</Link>
             <Link to={"/tip"}>팁게시판</Link>
           </div>
           <div className="nav-logo">
