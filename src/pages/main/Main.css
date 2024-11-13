@@ -12,10 +12,6 @@
     font-style: normal;
 }
 
-.main-first-section {
-    background: radial-gradient(circle, rgba(214,222,255,1) 0%, rgba(241,243,247,1) 79%);
-}
-
 .main-welcome {
     font-size: 76px;
     color: #1A1869;
