@@ -9,7 +9,7 @@ const Header = () => {
         <div className="nav-bar">
           <div className="nav-btns">
             <Link to={"/eat"}>먹거리</Link>
-            <a>학업</a>
+            <Link to={"/study"}>학업</Link>
             <a>주거</a>
             <Link to={"/tip"}>팁게시판</Link>
           </div>

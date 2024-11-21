@@ -11,7 +11,8 @@ export default function Item({ title, img, to }) {
     setIsAllValid(true); // 클릭 시 애니메이션 시작
     setTimeout(() => {
       setIsAllValid(false); // 1초 후 애니메이션 클래스 제거
-      nav(to); // 이동을 원하면 주석 해제
+      nav(to);
+      console.log(to);
     }, 800); // 애니메이션 시간에 맞춰 1초로 설정
   };
 

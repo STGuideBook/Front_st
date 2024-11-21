@@ -1,0 +1,12 @@
+.study-button {
+    cursor: pointer;
+    width: 132px;
+    height: 56px;
+    border-radius: 30px;
+    background-color: #627DFF;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+}

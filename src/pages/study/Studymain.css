@@ -1,0 +1,15 @@
+.study-firstsection {
+    height: 298px;
+    margin-top: 84px;
+}
+
+.study-categories {
+    display: grid; /* Grid 레이아웃 사용 */
+    grid-template-columns: repeat(3, 1fr); /* 3개의 열 */
+    gap: 20px; /* 박스 간 간격 */
+    list-style: none; /* ul 기본 스타일 제거 */
+    padding: 0; /* ul 기본 패딩 제거 */
+    margin: 0 auto; /* 수평 중앙 정렬 */
+    max-width: 1227px; /* 전체 박스의 최대 너비 */
+}
+

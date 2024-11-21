@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard-Medium';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard-SemiBold';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+}
+
+.study-box {
+    width: 397px;
+    height: 340px;
+    background-color: white;
+    border-radius: 30px;
+    margin: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.study-box-title,
+.study-box-content,
+.study-box-img img,
+.study-box-button {
+  background-color: inherit; /* 부모와 동일한 배경색 */
+}
+
+.study-box-title {
+    font-family: 'Pretendard-SemiBold';
+    font-size: 26px;
+    color: #000000;
+    position: absolute;
+    top: 44px;
+    left: 37px;
+    text-align: left;
+}
+
+.study-box-content {
+    font-family: 'Pretendard-Medium';
+    font-size: 16px;
+    color: #939393;
+    position: absolute;
+    top: 94px;
+    left: 37px;
+    text-align: left;
+}
+
+.study-box-button {
+    position: absolute;
+    bottom: 20px;
+    right: 29px;
+}
+
+.study-box-img {
+    width: 103px;
+    height: 103px;
+    background-color: inherit; /* 부모와 동일한 배경색 */
+    position: absolute;
+    bottom: 20px;
+    left: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
