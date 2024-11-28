@@ -11,7 +11,8 @@ import Tip from "../pages/tip/Tip";
 import TipmainServer from "../pages/tip/TipmainServer";
 import Study from "../pages/study/Study";
 import Studymain from "../pages/study/Studymain";
-
+import Studysugang from "../pages/study/Studysugang";
+import Eatinside from "../pages/eat/Eatinside";
 
 export const router = createBrowserRouter([
     {
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
                 {
                     path: "drink",
                     element: <Drinkmain /> // 주점 페이지
+                },
+                {
+                    path: "content",
+                    element: <Eatinside />
                 }]
             },
             {
@@ -47,7 +52,7 @@ export const router = createBrowserRouter([
                 element: <Tip />,
                 children: [{
                     path: "",
-                    element: <TipmainServer/>
+                    element: <TipmainServer/> // 팁게시판 페이지
                 }]
             },
             {
@@ -55,7 +60,11 @@ export const router = createBrowserRouter([
                 element: <Study />,
                 children: [{
                     path: "",
-                    element: <Studymain />
+                    element: <Studymain /> // 학업 페이지
+                },
+                {
+                    path: "sugang",
+                    element: <Studysugang /> // 수강신청 세부 페이지
                 }]
             }
         ]

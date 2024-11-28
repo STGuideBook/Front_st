@@ -6,7 +6,7 @@ const Studymain = () => {
         title: "수강신청",
         content: "수강신청이란?<br/>수업 고르는 법 / 시간표 짜는법<br/>수강신청 하는법",
         img: "assets/img/study/sugang.svg", 
-        to: "/eat"
+        to: "/study/sugang"
       },{
         title: "공부하기 좋은 장소",
         content: "교내 공부하기 좋은 장소<br/>교외 공부하기 좋은 장소",

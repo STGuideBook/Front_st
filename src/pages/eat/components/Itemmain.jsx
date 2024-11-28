@@ -1,10 +1,15 @@
 import "./Itemmain.css";
+import { useNavigate } from "react-router-dom";
 
-export default function Itemmain({title, img}) {
-    return <div className="Itemmain">
-        <div className="img-box">
-            <img src={img} alt={title} />
+export default function Itemmain({ title, img }) {
+    const nav = useNavigate();
+    const handleClick = () => {
+        nav("/eat/content");
+    }
+    return (
+        <div className="Itemmain">
+            <img src={img} alt={title} className="item-image" onClick={handleClick}/>
+            <h3 className="item-title" onClick={handleClick}>{title}</h3>
         </div>
-        <h3>{title}</h3>
-    </div>
+    );
 }

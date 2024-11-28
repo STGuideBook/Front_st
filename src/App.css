@@ -17,7 +17,7 @@
 .wrap-container {
   height: auto;
   min-height: 100%;
-  padding-bottom: 238px;
+  padding-top: 10px; /* 여백 추가 */
 }
 
 .contents {

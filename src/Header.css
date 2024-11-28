@@ -13,6 +13,11 @@ a {
   text-decoration: none;
 }
 
+.header {
+  margin-top: 0; /* 여백 제거 */
+  background-color: inherit;
+}
+
 nav {
   position: relative;
   margin: auto;
@@ -24,8 +29,8 @@ nav {
   font-family: 'Pretendard-Regular';
   font-size: 20px;
   font-weight: 800;
-  margin-top: 10px;
   padding: 0 74px;
+  margin-top: 10px;
 }
 
 .nav-bar {

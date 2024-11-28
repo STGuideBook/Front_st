@@ -1,0 +1,100 @@
+.eat-inside-title {
+    background-color: #627DFF;
+    height: 307px;
+}
+
+.eat-inside-title h3,
+.eat-inside-title h1 {
+  background-color: inherit; /* 부모와 동일한 배경색 */
+  font-family: 'Pretendard-SemiBold';
+  color: #F1F3F7;
+}
+
+.eat-inside-title h3 {
+    font-size: 26px;
+    margin-top: 117px;
+}
+
+.eat-inside-title h1 {
+    font-size: 48px;
+    margin-top: 14px;
+}
+
+.eat-inside-back {
+    background-color: #627DFF;
+}
+  
+.eat-inside-contents {
+    background-color: #F1F3F7;
+    border-radius: 80px 80px 0 0; /* 위쪽 모서리만 둥글게 */
+    width: auto;
+    height: 2158px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.eat-content-box {
+    position: relative;
+    top: 120px;
+    background-color: white;
+    width: 1320px;
+    height: 572px;
+    border-radius: 30px;
+}
+
+.eat-location,
+.eat-star-images,
+.eat-star-content,
+.eat-content-box-content,
+.eat-star-images img,
+.eat-content-image{
+    width: auto;
+    background-color: inherit;
+}
+
+.eat-location {
+    position: absolute;
+    font-size: 20px;
+    width: 190px;
+    top: 47px;
+    left: 41px;
+    font-family: 'Pretendard-SemiBold';
+}
+
+.eat-star-images {
+    position: absolute;
+    top: 112px;
+    left: 47px;
+    display: flex;
+    align-items: center;
+}
+
+.eat-star-images img {
+    width: 65px;
+    height: 65px;
+    margin: 3px;
+}
+
+.eat-star-images span {
+    color: #B4B4B4;
+    margin-left: 35px;
+    font-size: 20px;
+    font-family: 'Pretendard-SemiBold';
+}
+
+.eat-content-box-content {
+    position: absolute;
+    line-height: 60px;
+    font-size: 22px;
+    font-family: 'Pretendard-Regular';
+    text-align: start;
+    top: 231px;
+    left: 45px;
+}
+
+.eat-content-image {
+    position: absolute;
+    top: 112px;
+    right: 35px;
+}
