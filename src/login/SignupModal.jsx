@@ -7,21 +7,21 @@ const SignupModal = ({ closeModal }) => {
     username: '',
     password1: '',
     password2: '',
-    student_id: '', // studentId -> student_id
+    student_Id: '', // student_id -> student_Id
   });
 
   const [errors, setErrors] = useState({
     username: '아이디를 입력하세요.',
     password1: '비밀번호를 입력하세요.',
     password2: '비밀번호를 다시 입력하세요.',
-    student_id: '학번을 입력하세요.', // studentId -> student_id
+    student_Id: '학번을 입력하세요.', // student_id -> student_Id
   });
 
   const [validStates, setValidStates] = useState({
     username: false,
     password1: false,
     password2: false,
-    student_id: false, // studentId -> student_id
+    student_Id: false, // student_id -> student_Id
   });
 
   const [isChecking, setIsChecking] = useState(false); // 중복확인 진행 상태
@@ -71,13 +71,13 @@ const SignupModal = ({ closeModal }) => {
       setValidStates(newValidStates);
     }
 
-    if (name === 'student_id') {
+    if (name === 'student_Id') {
       if (!/^\d{2}$/.test(value)) {
-        newErrors.student_id = '학번은 2자리 숫자여야 합니다.';
-        newValidStates.student_id = false;
+        newErrors.student_Id = '학번은 2자리 숫자여야 합니다.';
+        newValidStates.student_Id = false;
       } else {
-        newErrors.student_id = '올바른 학번입니다.';
-        newValidStates.student_id = true;
+        newErrors.student_Id = '올바른 학번입니다.';
+        newValidStates.student_Id = true;
       }
       setErrors(newErrors);
       setValidStates(newValidStates);
@@ -131,7 +131,7 @@ const SignupModal = ({ closeModal }) => {
             username: formData.username,
             password1: formData.password1,
             password2: formData.password2,
-            student_id: formData.student_id, // studentId -> student_id
+            student_Id: formData.student_Id, // student_id -> student_Id
           }
         );
         alert('회원가입 성공!');
@@ -185,12 +185,12 @@ const SignupModal = ({ closeModal }) => {
               </button>
             </div>
           </div>
-          {['password1', 'password2', 'student_id'].map((field) => (
+          {['password1', 'password2', 'student_Id'].map((field) => (
             <div key={field} className="signup-form-group">
               <label htmlFor={field}>
                 {field === 'password1' && '비밀번호'}
                 {field === 'password2' && '비밀번호 확인'}
-                {field === 'student_id' && '학번'}
+                {field === 'student_Id' && '학번'}
                 <span
                   className={`signup-error ${
                     validStates[field] ? 'signup-valid' : 'signup-invalid'
