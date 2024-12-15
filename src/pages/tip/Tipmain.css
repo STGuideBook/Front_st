@@ -31,6 +31,87 @@
     font-family: 'Pretendard-Regular';
 }
 
+/* 글쓰기 박스 (tip-box) 기본 상태 - 숨김 */
+.tip-box {
+    display: none; /* 안 보이도록 설정하고 자리 차지하지 않음 */
+    width: 1235px;
+    height: 357.5px;
+    margin-top: 36px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-20px); /* 위로 숨김 */
+    transition: all 0.3s ease-in-out; /* 애니메이션 효과 */
+}
+
+/* 글쓰기 박스 활성화 상태 - 표시 */
+.tip-box.open {
+    display: block; /* 표시되며 자리 차지 */
+    opacity: 1;
+    transform: translateY(0); /* 원래 위치로 */
+    transition: all 0.3s ease-in-out;
+}
+
+  
+/* 글쓰기 버튼 기본 스타일 */
+.tip-writeBtn {
+    margin-top: 15px;
+    width: 1235px;
+    height: 54px;
+    border-radius: 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    div,
+    img {
+        transition: background-color 0.3s ease;
+    }
+  }
+  
+  /* 로그인 상태 - 활성화 */
+  .tip-writeBtn.active {
+    background-color: #627DFF;
+  }
+  
+  .tip-writeBtn.active > div {
+    color: white;
+    background-color: #627DFF;
+  }
+  
+  .tip-writeBtn.active > img {
+    background-color: #627DFF;
+  }
+  
+  /* 비로그인 상태 - 비활성화 */
+  .tip-writeBtn.disabled {
+    background-color: #A7A7A7;
+    cursor: not-allowed; /* 비활성화 상태의 마우스 커서 */
+  }
+  
+  .tip-writeBtn.disabled > div {
+    color: white;
+    background-color: #A7A7A7;
+  }
+  
+  .tip-writeBtn.disabled > img {
+    background-color: #A7A7A7;
+  }
+  
+  /* 글쓰기 버튼 hover 효과 */
+  .tip-writeBtn.active:hover {
+    background-color: #5167d5;
+
+    div {
+        background-color: #5167d5;
+    }
+    img {
+        background-color: #5167d5;
+    }
+  }
+  
+
 .tip-box-up {
     display: flex;
     width: 1235px; 
@@ -255,14 +336,14 @@ hr {
     border-radius: 30px;
     display: flex;
     align-items:center;
+    justify-content: center;
   }
 
   .tip-writeBtn > div {
     color: white;
     background-color: #627DFF;
-    width: 604px;
+    width: auto;
     height: 43px;
-    position: absolute;
     left: 314px;
     font-size: 20px;
     line-height: 41px;
@@ -271,6 +352,4 @@ hr {
 
   .tip-writeBtn > img {
     background-color: #627DFF;
-    position: absolute;
-    left: 677px
   }

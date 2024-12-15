@@ -99,7 +99,7 @@
 
 /* 기본 상태 (빨간색) */
 .signup-invalid {
-    color: red;
+    color: #FF3E40;
 }
 
 /* 올바른 입력 상태 (#96A8FE) */

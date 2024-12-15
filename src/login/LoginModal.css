@@ -129,3 +129,11 @@
 .login-btn:hover {
     background-color: #5167d5;
 }
+
+.login-error {
+    color: #FF3E40; /* 오류 메시지 색상 */
+    font-size: 14px;
+    font-family: 'Pretendard-Regular';
+    margin-top: 5px;
+  }
+  
