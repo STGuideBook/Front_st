@@ -1,67 +1,106 @@
-body {
-  background-color: #ffffff;
+
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
 }
 
+.main-pagination-container {
+background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 45px;
+}
 
-button {
-  width: 261px;
-  height: 340px;
+.main-button-container {
+background-color: white;
+
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.main-button-item {
+  width: 254px;
+  height: 330px;
   border: none;
   border-radius: 30px;
-  margin: 0 12px;
-  cursor: pointer;
+  display: flex;
+  flex-direction: column;
   font-size: 16px;
-  color: #999999;
-}
-
-/* 페이지네이션 버튼 스타일 */
-.pagination {
-  display: flex;  
-  justify-content: center;
-  margin-top: 20px;
-  gap: 20px;
-}
-
-/* 버튼들을 담을 컨테이너 스타일 */
-.button-container {
-  display: flex; 
-  flex-wrap: wrap;
-  justify-content: center; 
-  gap: 12px;
-  margin-top: 19px;
-}
-
-.button-1 {
-  background-color: #96A8FE;
-}
-
-.button-2 {
-  background-color: #7E94FF;
-}
-
-.button-3 {
-  background-color: #6562FF;
-}
-
-.button-4 {
-  background-color: #96A8FE;
-}
-
-.button-5 {
-  background-color: #1A1869;
-}
-
-/* 페이지 넘김 버튼 및 페이지 번호 텍스트 스타일 */
-.pagination-text,
-.page-number {
-  font-size: 24px; 
-  color: #EBEFFF; /* 기본 텍스트 색상 */
   cursor: pointer;
-  padding: 0 10px; 
-  user-select: none;
+}
+
+/* 제목 (title) */
+.main-button-item h3 {
+  font-family: 'Pretendard-Regular';
+  font-size: 26px;
+  color: #EEF1FF;
+  background-color: transparent;
+  font-weight: 600; 
+  text-align: left;
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-bottom: 10px; /* 제목과 부제목 간 간격 */
+}
+
+/* 부제목 (subtitle) */
+.main-button-item p {
+  font-family: 'Pretendard-Regular';
+  font-size: 20px;
+  color: #CBD4FF;
+  background-color: transparent;
+  text-align: left;
+  margin-left: 25px;
+  margin-top: 5px;
 }
 
 
-.page-number.active {
-  color: #6562FF; /* 선택된 페이지 번호 색상 */
+.main-button-item img {
+  width: 90px;
+  height: 90px;
+  margin-top: 90px;
+  padding-left: 135px;
+  background-color: transparent;
+}
+
+.main-pagination-buttons {
+background-color: white;
+
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.main-pagination-buttons button {
+  background-color: transparent;
+  color: #6562FF;
+  border: none;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.main-pagination-buttons .main-page-button {
+  color: #cccccc;
+}
+
+.main-pagination-buttons .main-page-button.main-active {
+  color: #6562FF;
+}
+
+.main-pagination-buttons button:disabled {
+  background-color: transparent;
+  color: #cccccc;
+  cursor: not-allowed;
 }

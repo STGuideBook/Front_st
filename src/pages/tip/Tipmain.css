@@ -14,7 +14,7 @@
     background-color: white;
 }
 
-.input-wrap {
+.tip-input-wrap {
     background-color: white;
     border-radius: 100px;
     width: 512px;
@@ -22,7 +22,7 @@
     position: relative;
 }
 
-.input-wrap > input {
+.tip-input-wrap > input {
     position: absolute;
     top: 22%;
     left: 5%;
@@ -124,7 +124,7 @@
     font-family: 'Pretendard-Regular';
 }
 
-.input-wrap > img {
+.tip-input-wrap > img {
     background-color: white;
     position: absolute;
     top: 10%;
@@ -224,40 +224,56 @@ hr {
 }
 
 .tip-menu-select {
-    align-items: center;
-    position: relative;
     display: flex;
+    justify-content: flex-end;
     margin-top: 31.5px;
     width: 1235px;
     height: 41px;
-}
-
-.tip-menu-select::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 146px; /* 밑줄 시작 위치를 왼쪽에서 25%로 조정 */
-    width: 84px; /* 밑줄 길이를 50%로 조정 */
-    height: 3px; /* 밑줄 두께 */
-    background-color: #6562FF; /* 밑줄 색상 */
   }
-
-.menu-date-select, .menu-heart-select {
-    width: 100px;
+  
+  .menu-date-select,
+  .menu-heart-select {
+    position: relative;
     font-size: 22px;
     font-weight: bold;
+    padding: 0 10px;
+    color: #a8a8a8; /* 기본 회색 */
+    cursor: pointer;
+  }
+  
+  .menu-date-select.active,
+  .menu-heart-select.active {
+    color: #627dff; /* 선택된 상태의 파란색 */
+  }
+  
+  .menu-date-select.active::after,
+  .menu-heart-select.active::after {
+    content: "";
     position: absolute;
-}
-
-.menu-date-select {
-    right: 136px;
-    color: #627DFF;
-}
-
-.menu-heart-select {
-    right: 12px;
-    color: #A8A8A8;
-}
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #627dff; /* 밑줄 색상 */
+  }
+  
+  .menu-date-select::after,
+  .menu-heart-select::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: transparent; /* 기본 상태에서 밑줄 없음 */
+    transition: width 0.3s ease-in-out; /* 부드러운 밑줄 애니메이션 */
+  }
+  
+  .menu-date-select:hover::after,
+  .menu-heart-select:hover::after {
+    width: 100%; /* 마우스 오버 시 밑줄 표시 */
+    background-color: #a8a8a8; /* 회색 밑줄 */
+  }
 
 .tip-menu-intro {
     margin-top: 24px;
@@ -310,6 +326,8 @@ hr {
   }
   
   .tip-pagination-button {
+    width: 30px;
+    height: 30px;
     font-size: 20px;
     padding: 5px 10px;
     color: #CECECE;

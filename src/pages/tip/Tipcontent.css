@@ -1,0 +1,206 @@
+.tip-content-title {
+    position: relative;
+    background-color: #627DFF;
+    height: 201px;
+
+    h1 {
+        font-family: 'Pretendard-SemiBold';
+        font-size: 40px;
+        position: absolute;
+        bottom: 43px;
+        left: 144px;
+        background-color: inherit;
+        color: #FFFFFF;
+    }
+}
+
+.tip-content-back {
+  background-color: #627DFF;
+}
+
+.tip-content-inside {
+    background-color: #f1f3f7;
+    border-radius: 80px 80px 0 0; /* 위쪽 모서리만 둥글게 */
+    width: auto;
+    height: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tip-detail-container {
+    position: relative;
+    background-color: inherit;
+    margin-top: 56px;
+    width: 1225px;
+    height: 424px;
+    line-height: 1.6;
+    font-family: "Pretendard-Regular";
+  }
+
+  .tip-detail-profile {
+    width: 113px;
+    height: 113px;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+
+    img {
+        background-color: inherit;
+    }
+  }
+
+  .tip-detail-studentId {
+    color: #494949;
+    background-color: inherit;
+    font-size: 22px;
+    font-family: 'Pretendard-SemiBold';
+    position: absolute;
+    top: 0cqi;
+    left: 139px;
+  }
+
+  .tip-detail-date {
+    background-color: inherit;
+    font-family: 'Pretendard-Medium';
+    position: absolute;
+    top: 41px;
+    left: 139px;
+    font-size: 20px;
+    color: #B4B4B4;
+  }
+
+  .tip-detail-buttons {
+    background-color: inherit;
+    position: absolute;
+    top: 39px;
+    right: 15px;
+    width: 120px;
+    height: 29px;
+    display: flex;
+    font-family: 'Pretendard-Medium';
+    font-size: 19px;
+    color: #B4B4B4;
+
+    div {
+        background-color: inherit;
+        height: 29px;
+        margin: 5px;
+    }
+  }
+
+  .tip-edit-button {
+    width: 50px;
+    height: 29px;
+    cursor: pointer;
+
+    &:hover {
+        color: #494949;
+    }
+  }
+
+  .tip-delete-button {
+    width: 50px;
+    height: 29px;
+    cursor: pointer;
+
+    &:hover {
+        color: #494949;
+    }
+  }
+  
+  .tip-detail-title {
+    position: absolute;
+    top: 128px;
+    text-align: start;
+    font-size: 40px;
+    font-family: 'Pretendard-SemiBold';
+    background-color: inherit;
+    color: #000000;
+  }
+  
+  .tip-detail-body {
+    width: 1214px;
+    font-family: 'Pretendard-Medium';
+    text-align: start;
+    position: absolute;
+    top: 226px;
+    font-size: 24px;
+    color: #494949;
+    background-color: inherit;
+  }
+  
+  .tip-detail-heart {
+    width: 186px;
+    height: 61px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    font-size: 22px;
+    justify-content: center;
+    border-radius: 30px;
+    cursor: pointer;
+    color: #494949;
+
+    div,
+    img,
+    span {
+
+        margin: 3px;
+        background-color: inherit;
+    }
+  }
+
+  .liked {
+    color: #FF3E40;
+  }
+
+  .tip-ranking-title {
+    margin-top: 20px;
+    width: 1235px;
+    text-align: start;
+    font-family: 'Pretendard-SemiBold';
+    font-size: 28px;
+    position: relative; /* 부모 요소를 기준으로 위치 설정 */
+}
+
+.tip-ranking-title::after {
+    content: ""; /* 가상 요소 추가 */
+    display: block; /* 블록 요소로 설정 */
+    width: 100%; /* 부모의 너비만큼 밑줄 */
+    height: 1px; /* 밑줄의 두께 */
+    background-color: #585858; /* 밑줄 색상 */
+    margin-top: 8px; /* 제목과 밑줄 사이 간격 */
+    position: absolute; /* 부모를 기준으로 위치 */
+    bottom: -15px; /* 부모 요소 기준으로 아래로 약간 띄움 */
+    left: 0; /* 왼쪽 정렬 */
+}
+
+.tip-go-list {
+    margin-top: 50px;
+    width: 186px;
+    height: 61px;
+    display: flex;
+    background-color: #D9D9D9;
+    border-radius: 30px;   
+    justify-content: center;
+    align-items: center;
+
+    div {
+        background-color: inherit;
+        font-size: 22px;
+        font-family: 'Pretendard-Medium';
+        color: #494949;
+        margin-left: 10px;
+    }
+
+    img {
+        margin-left: 5px;
+        background-color: inherit;
+    }
+}

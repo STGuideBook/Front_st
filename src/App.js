@@ -2,15 +2,19 @@ import React from 'react';
 import './App.css';
 import Header from './Header';
 import Footer from './Footer';
-import { Outlet, useLocation } from 'react-router-dom';
-import { AuthProvider } from './AuthContext'; // AuthProvider 가져오기
+import { Outlet, useMatch } from 'react-router-dom';
+import { AuthProvider } from './AuthContext';
 import DevButton from './DevButton';
 import DevLogout from './DevLogout';
 
 function App() {
-  const location = useLocation();
+  // useMatch를 조건문 밖에서 호출
+  const matchStudySugang = useMatch('/study/sugang');
+  const matchEatContent = useMatch('/eat/content');
+  const matchTipRead = useMatch('/tip/read/:id');
 
-  const isInside = location.pathname === '/study/sugang' || location.pathname === '/eat/content';
+  // 조건부로 값 설정
+  const isInside = matchStudySugang || matchEatContent || matchTipRead;
 
   return (
     <AuthProvider> {/* AuthProvider로 전체를 감싸기 */}
@@ -28,8 +32,6 @@ function App() {
         </div>
         <Footer />
       </div>
-      <DevLogout />
-      <DevButton />
     </AuthProvider>
   );
 }

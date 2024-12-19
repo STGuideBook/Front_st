@@ -13,6 +13,7 @@ import Study from "../pages/study/Study";
 import Studymain from "../pages/study/Studymain";
 import Studysugang from "../pages/study/Studysugang";
 import Eatinside from "../pages/eat/Eatinside";
+import Tipcontent from "../pages/tip/Tipcontent";
 
 export const router = createBrowserRouter([
     {
@@ -53,6 +54,10 @@ export const router = createBrowserRouter([
                 children: [{
                     path: "",
                     element: <TipmainServer/> // 팁게시판 페이지
+                },
+                {
+                    path: "read/:id", // ID를 URL 파라미터로 받음
+                    element: <Tipcontent />
                 }]
             },
             {

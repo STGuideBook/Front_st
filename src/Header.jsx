@@ -1,42 +1,52 @@
 import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
-import { Link } from "react-router-dom";
 import { useAuth } from "./AuthContext"; // Context 가져오기
 import LoginModal from "./login/LoginModal";
 import SignupModal from "./login/SignupModal";
 
 const Header = () => {
-  const { isAuthenticated, userInfo, logout } = useAuth(); // 로그인 상태와 사용자 정보 가져오기
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false); // 로그인 모달 상태
-  const [isSignupModalOpen, setIsSignupModalOpen] = useState(false); // 회원가입 모달 상태
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // 메뉴 모달 상태
+  const { isAuthenticated, userInfo, logout } = useAuth();
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // 로그인 모달 열기
+  const location = useLocation(); // 현재 경로 가져오기
+
   const openLoginModal = () => {
     setIsLoginModalOpen(true);
-    setIsSignupModalOpen(false); // 회원가입 모달 닫기
+    setIsSignupModalOpen(false);
   };
 
-  // 회원가입 모달 열기
   const openSignupModal = () => {
     setIsSignupModalOpen(true);
-    setIsLoginModalOpen(false); // 로그인 모달 닫기
+    setIsLoginModalOpen(false);
   };
 
-  // 모달 닫기
   const closeModal = () => {
     setIsLoginModalOpen(false);
     setIsSignupModalOpen(false);
   };
 
-  // 메뉴 모달 토글
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // 메뉴 모달 닫기
   const closeMenu = () => {
     setIsMenuOpen(false);
+  };
+
+  // student_Id에 따라 이미지 경로를 동적으로 설정
+  const getStudentIcon = () => {
+    if (!userInfo || !userInfo.student_Id) return "/assets/grade/first.svg"; // 기본 이미지
+    const studentId = String(userInfo.student_Id);
+
+    if (studentId.startsWith("24")) return "/assets/img/grade/first.svg"; // 24학번 이미지
+    if (studentId.startsWith("23")) return "/assets/img/grade/second.svg"; // 23학번 이미지
+    if (studentId.startsWith("22")) return "/assets/img/grade/third.svg"; // 22학번 이미지
+    if (studentId.startsWith("21")) return "/assets/img/grade/fourth.svg"; // 22학번 이미지
+
+    return "/assets/img/default.svg"; // 기본 이미지
   };
 
   return (
@@ -44,22 +54,34 @@ const Header = () => {
       <nav>
         <div className="nav-bar">
           <div className="nav-btns">
-            <Link to={"/eat"}>먹거리</Link>
-            <Link to={"/study"}>학업</Link>
-            <Link to={"/housing"}>주거</Link>
-            <Link to={"/tip"}>팁게시판</Link>
+            <Link to="/eat" className={location.pathname === "/eat" ? "active" : ""}>
+              먹거리
+            </Link>
+            <Link to="/study" className={location.pathname === "/study" ? "active" : ""}>
+              학업
+            </Link>
+            <Link to="/housing" className={location.pathname === "/housing" ? "active" : ""}>
+              주거
+            </Link>
+            <Link to="/tip" className={location.pathname === "/tip" ? "active" : ""}>
+              팁게시판
+            </Link>
           </div>
           <div className="nav-logo">
             <a href="/"><img src="/assets/img/seoultech-logo.svg" alt="Seoultech Logo" /></a>
           </div>
           <div
             className="nav-login"
-            onClick={isAuthenticated ? toggleMenu : openLoginModal} // 로그인 상태에 따라 동작 변경
+            onClick={isAuthenticated ? toggleMenu : openLoginModal}
           >
             {isAuthenticated ? (
               <>
                 <a>익명의 {userInfo.student_Id}학번</a>
-                <img className="login-icon" src="/assets/img/24.svg" alt="User Icon" />
+                <img
+                  className="login-icon"
+                  src={getStudentIcon()}
+                  alt="User Icon"
+                />
               </>
             ) : (
               <>
@@ -71,17 +93,12 @@ const Header = () => {
         </div>
       </nav>
 
-      {/* 로그인 모달 */}
       {!isAuthenticated && isLoginModalOpen && (
         <LoginModal closeModal={closeModal} openSignupModal={openSignupModal} />
       )}
-
-      {/* 회원가입 모달 */}
       {!isAuthenticated && isSignupModalOpen && (
         <SignupModal closeModal={closeModal} />
       )}
-
-      {/* 메뉴 모달 (로그인 상태일 때만 표시) */}
       {isMenuOpen && isAuthenticated && (
         <div className="menu-modal">
           <ul>

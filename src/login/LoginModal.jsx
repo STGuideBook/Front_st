@@ -40,19 +40,16 @@ const LoginModal = ({ closeModal, openSignupModal }) => {
     setError('');
 
     try {
-      // 1. user/login으로 로그인 요청
-      await axios.post('https://stguidebook-649b3dde2d26.herokuapp.com/user/login', formData);
+      // user/login으로 로그인 요청
+      const response = await axios.post('https://stguidebook-649b3dde2d26.herokuapp.com/user/login', formData);
 
-      // 2. user/status로 상태 확인
-      const statusResponse = await axios.get('https://stguidebook-649b3dde2d26.herokuapp.com/user/status');
-      if (statusResponse.data.success) {
-        // 서버에서 성공적인 응답을 받은 경우
-        const { username, student_Id } = statusResponse.data;
+      if (response.data.status === 'success') {
+        const { username, student_Id } = response.data;
 
-        // 3. Context와 sessionStorage에 저장
+        // Context와 sessionStorage에 저장
         login({ username, student_Id });
 
-        // 4. rememberMe 체크 시 localStorage에 아이디 저장
+        // rememberMe 체크 시 localStorage에 아이디 저장
         if (rememberMe) {
           localStorage.setItem('rememberedUsername', username);
         } else {
