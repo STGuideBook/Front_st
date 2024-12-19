@@ -1,3 +1,7 @@
+* {
+    white-space: pre-line;
+}
+
 @font-face {
     font-family: 'SBAggroB';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
@@ -12,8 +16,23 @@
     font-style: normal;
 }
 
-.main-first-section {
-    background: radial-gradient(circle, rgba(214,222,255,1) 0%, rgba(241,243,247,1) 79%);
+.main-second {
+    text-align: center;
+    background-color: white;
+    border-radius: 80px 80px 0 0;
+
+    .main-second-up {
+        padding: 30px;
+        margin-top: 20px;
+        background-color: inherit;
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.main-third {
+    background-color: #202020;
 }
 
 .main-welcome {
@@ -29,9 +48,71 @@
 }
 
 .main-popular-info {
+    background-color: inherit;
     font-size: 28px;
     color: #6562FF;
     font-family: 'Pretendard-Regular';
     font-weight: 700;
-    margin-top: 20px;
+}
+
+.main-second-section{
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: inherit;
+    height: 50px;
+}
+
+.main-thrid-section {
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding: 0 20px;
+}
+
+.main-thrid-section > div {
+    margin-right: 350px; /* 텍스트와 이미지 사이 여백 */
+    display: flex;
+    flex-direction: column; /* 텍스트들을 세로로 정렬 */
+    text-align: left;         /* 텍스트 왼쪽 정렬 */
+}
+
+.main-for-who {
+    font-family: 'SBAggroB';
+    font-size: 65px;
+    color: #1A1869;
+}
+
+.main-for-who-p {
+    font-family: 'Pretendard-Regular';
+    font-size: 20px;
+    color: #1A1869;
+    font-weight: 600;
+    line-height: 150%;
+    margin-top: 30px;
+}
+
+.main-thrid-section img {
+    max-width: 100%;  /* 이미지 크기 조절 */
+    height: auto;     /* 비율 유지 */
+    align-self: center;  /* 이미지 세로 중앙 정렬 */
+}
+
+.main-caution {
+    font-family: 'SBAggroB';
+    font-size: 65px;
+    color: #96A8FE;
+}
+
+.main-caution-p {
+    font-family: 'Pretendard-Regular';
+    font-size: 20px;
+    color: #96A8FE;
+    font-weight: 600;
+    line-height: 150%;
+    margin-top: 60px;
 }

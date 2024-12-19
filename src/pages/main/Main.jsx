@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Main.css';
 import PaginationWithButtons from './PaginationWithButtons';
 
 const MainFirstSection = () => {
   return (
-    <div>
+    <div className='main-first-section'>
       <div className="main-welcome">Welcome To<br />Seoul_Tech!</div>
       <div className="main-school-img">
-        <img src="assets/img/main/main-school.png" alt="Main School" />
+        <img src="assets/img/main/main-school.png"/>
       </div>
     </div>
   );
@@ -21,50 +21,55 @@ const MainSecondSection = () => {
   );
 };
 
-export default function Main() {
-  const [currentPage, setCurrentPage] = useState(1);
-  const buttonsPerPage = 5; // 한 페이지에 표시할 버튼 수
-  const totalButtons = 15; // 총 버튼 수 (3페이지 * 5버튼)
-  const totalPages = Math.ceil(totalButtons / buttonsPerPage); // 총 페이지 수
+const MainThridSection = () => {
+  return (
+    <div className='main-thrid-section'>
+      <div>
+        <div className='main-for-who'>For Who?</div>
+        <div className="main-for-who-p">
+          서울과학기술대학교 신입생 여러분, 환영합니다!<br />
+          저희 웹사이트는 여러분이 대학 생활을 시작하면서 겪을 수 있는 어려움을<br />
+          덜어드리기 위해 제작되었습니다. 신입생 시절, 정보를 어디서 얻어야 할지<br />
+          몰라 답답했던 경험을 바탕으로 여러분이 대학 생활에 필요한 모든 정보를<br />
+          쉽게 찾고 활용할 수 있도록 도와드릴게요.
+        </div>
+      </div>
+      <img src="assets/img/main/for-who.svg"/>
+    </div>
+  );
+};
 
-  // 버튼 내용 배열
-  const buttons = [
-    { title: '선배가 추천하는 맛집', subtitle: '먹거리 >', image: 'assets/img/main/button-img-1.svg' },
-    { title: '기숙사, 어디가 좋을까?', subtitle: '주거 >', image: 'assets/img/main/button-img-2.svg' },
-    { title: '수강신청 A부터 Z까지', subtitle: '학업 >', image: 'assets/img/main/button-img-3.svg' },
-    { title: '개강파티? 여기로 모여!', subtitle: '먹거리 >', image: 'assets/img/main/button-img-4.svg' },
-    { title: '과기대 더 알고싶다면?', subtitle: '팁게시판', image: 'assets/img/main/button-img-5.svg' },
-    { title: '버튼 6 제목', subtitle: '버튼 6 부제목', image: null },
-    { title: '버튼 7 제목', subtitle: '버튼 7 부제목', image: null },
-    { title: '버튼 8 제목', subtitle: '버튼 8 부제목', image: null },
-    { title: '버튼 9 제목', subtitle: '버튼 9 부제목', image: null },
-    { title: '버튼 10 제목', subtitle: '버튼 10 부제목', image: null },
-    { title: '버튼 11 제목', subtitle: '버튼 11 부제목', image: null },
-    { title: '버튼 12 제목', subtitle: '버튼 12 부제목', image: null },
-    { title: '버튼 13 제목', subtitle: '버튼 13 부제목', image: null },
-    { title: '버튼 14 제목', subtitle: '버튼 14 부제목', image: null },
-    { title: '버튼 15 제목', subtitle: '버튼 15 부제목', image: null },
-  ];
+const MainFourthSection = () => {
+  return (
+    <div className='main-fourth-section'>
+      <img src="assets/img/main/warning.png"/>
+      <div className='main-caution'>Caution</div>
+      <div className='main-caution-p'>저희 웹사이트는 대학생활에 필요한 정확하고 유익한 정보를 제공하는 것을 최우선 목표로<br/>
+하고 있습니다. 따라서 모든 정보는 신중하게 검토되며, 잘못된 정보가 포함되지 않도록 최선을<br/>
+다하고 있습니다. 그러나, 제공된 정보가 시간이 지나면서 변동될 수 있으므로 최신 정보를 확인하는<br/>
+것은 이용자의 책임입니다. 사이트 내의 모든 정보는 참고용으로 봐주시면 감사하겠습니다.</div>
+    </div>
+  );
+};
 
-  // 현재 페이지에 따라 보여줄 버튼 리스트 계산
-  const currentButtons = buttons.slice((currentPage - 1) * buttonsPerPage, currentPage * buttonsPerPage);
-
-  const handlePageChange = (pageNumber) => {
-    if (pageNumber >= 1 && pageNumber <= totalPages) {
-      setCurrentPage(pageNumber);
-    }
-  };
-
+const Main = () => {
   return (
     <div>
-      <MainFirstSection />
-      <MainSecondSection />
-      <PaginationWithButtons
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={handlePageChange}
-        buttons={currentButtons}
-      />
+      <div className='main-first'>
+        <MainFirstSection />
+        <div className='main-second'>
+          <div className='main-second-up'>
+            <MainSecondSection />
+          </div>
+          <PaginationWithButtons />
+          <MainThridSection />
+          <div className='main-third'>
+            <MainFourthSection />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
+
+export default Main;
