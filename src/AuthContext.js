@@ -5,46 +5,58 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userInfo, setUserInfo] = useState({ username: '', student_Id: '' });
+  const [isLoading, setIsLoading] = useState(true); // 로딩 상태 추가
 
-  // sessionStorage에서 초기 상태 불러오기
   useEffect(() => {
     const storedSuccess = sessionStorage.getItem('success') === 'true';
-    const storedUsername = sessionStorage.getItem('username');
-    const storedStudentId = sessionStorage.getItem('student_Id');
+    const storedUsername = sessionStorage.getItem('username') || '';
+    const storedStudentId = sessionStorage.getItem('student_Id') || '';
 
-    if (storedSuccess) {
+    console.log("sessionStorage에서 불러온 값:", {
+      storedSuccess,
+      storedUsername,
+      storedStudentId,
+    });
+
+    if (storedSuccess && storedUsername && storedStudentId) {
       setIsAuthenticated(true);
       setUserInfo({ username: storedUsername, student_Id: storedStudentId });
     }
+
+    setIsLoading(false); // 로딩 완료
   }, []);
 
-  // 로그인 처리
   const login = ({ username, student_Id }) => {
+    if (!username || !student_Id) {
+      console.error('Invalid login attempt: Missing username or student_Id.');
+      return;
+    }
+
     setIsAuthenticated(true);
     setUserInfo({ username, student_Id });
 
-    // sessionStorage에 저장
     sessionStorage.setItem('success', 'true');
     sessionStorage.setItem('username', username);
     sessionStorage.setItem('student_Id', student_Id);
   };
 
-  // 로그아웃 처리
   const logout = () => {
     setIsAuthenticated(false);
     setUserInfo({ username: '', student_Id: '' });
-
-    // sessionStorage 초기화
-    sessionStorage.removeItem('success');
-    sessionStorage.removeItem('username');
-    sessionStorage.removeItem('student_Id');
+    sessionStorage.clear();
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, userInfo, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, userInfo, login, logout, isLoading }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-export const useAuth = () => useContext(AuthContext);
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error('useAuth must be used within an AuthProvider');
+  }
+  return context;
+};

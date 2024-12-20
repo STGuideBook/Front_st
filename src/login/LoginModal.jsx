@@ -17,6 +17,7 @@ const LoginModal = ({ closeModal, openSignupModal }) => {
       setFormData((prev) => ({ ...prev, username: rememberedUsername }));
       setRememberMe(true); // 체크박스도 활성화
     }
+    console.log('Remembered Username:', rememberedUsername); // 디버깅용 로그
   }, []);
 
   const handleOverlayClick = (event) => {
@@ -43,11 +44,15 @@ const LoginModal = ({ closeModal, openSignupModal }) => {
       // user/login으로 로그인 요청
       const response = await axios.post('https://stguidebook-649b3dde2d26.herokuapp.com/user/login', formData);
 
+      console.log('Server Response:', response.data); // 서버 응답 구조 확인
+
       if (response.data.status === 'success') {
         const { username, student_Id } = response.data;
 
         // Context와 sessionStorage에 저장
         login({ username, student_Id });
+
+        console.log('Logged in User Info:', { username, student_Id }); // 디버깅용 로그
 
         // rememberMe 체크 시 localStorage에 아이디 저장
         if (rememberMe) {

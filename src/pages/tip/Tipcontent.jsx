@@ -11,28 +11,39 @@ const axiosInstance = axios.create({
 });
 
 const Tipcontent = () => {
-
     const { id } = useParams(); // URL에서 id 가져오기
     const navigate = useNavigate(); // useNavigate 훅 가져오기
     const [contentData, setContentData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const { isAuthenticated } = useAuth(); // 로그인 상태 가져오기
+    const { isAuthenticated, userInfo } = useAuth();
     const [ranking, setRanking] = useState([]); // 랭킹 데이터
     const [liked, setLiked] = useState(false); // 좋아요 상태 관리
 
     useEffect(() => {
-        // 뒤로가기 동작을 감지
-        const handlePopState = () => {
-            navigate("/tip"); // 뒤로가기가 발생하면 /tip으로 이동
-        };
+        console.log("현재 사용자 인증 상태:", isAuthenticated);
+        console.log("현재 사용자 정보:", userInfo);
+    }, [isAuthenticated, userInfo]);
 
-        window.addEventListener("popstate", handlePopState);
+    // 게시글 삭제 함수
+    const handleDelete = async () => {
+        if (!isAuthenticated) {
+            alert("로그인이 필요합니다.");
+            return;
+        }
 
-        return () => {
-            window.removeEventListener("popstate", handlePopState); // 이벤트 정리
-        };
-    }, [navigate]);
+        const confirmDelete = window.confirm("정말로 이 게시글을 삭제하시겠습니까?");
+        if (!confirmDelete) return;
+
+        try {
+            await axiosInstance.delete(`/delete/${id}`);
+            alert("게시글이 삭제되었습니다.");
+            navigate("/tip"); // 삭제 후 /tip으로 이동
+        } catch (err) {
+            console.error("Error deleting the post:", err);
+            alert("게시글 삭제 중 문제가 발생했습니다.");
+        }
+    };
 
     useEffect(() => {
         // 현재 게시글 가져오기
@@ -41,6 +52,9 @@ const Tipcontent = () => {
                 const response = await axiosInstance.get(`/list/${id}`);
                 setContentData(response.data); // 데이터 저장
                 setLiked(response.data.liked || false); // 서버에서 좋아요 상태를 가져와 초기화
+
+                console.log("현재 사용자 username:", userInfo?.username);
+                console.log("게시글 작성자 username:", response.data.username);
             } catch (err) {
                 console.error("Error fetching content:", err);
                 setError("게시글을 불러오는 데 실패했습니다.");
@@ -121,11 +135,18 @@ const Tipcontent = () => {
                         </div>
                         <p className="tip-detail-studentId">익명의 {contentData.student_Id}학번</p>
                         <p className="tip-detail-date">{formatDate(contentData.createDate)}</p>
-                        <div className="tip-detail-buttons">
-                            <div className="tip-edit-button">수정</div>
-                            <div>ㅣ</div>
-                            <div className="tip-delete-button">삭제</div>
-                        </div>
+                        {userInfo && userInfo.username === contentData.username && (
+                            <div className="tip-detail-buttons">
+                                <div className="tip-edit-button">수정</div>
+                                <div>ㅣ</div>
+                                <div
+                                    className="tip-delete-button"
+                                    onClick={handleDelete} // 삭제 버튼 클릭 이벤트 연결
+                                >
+                                    삭제
+                                </div>
+                            </div>
+                        )}
                         <h2 className="tip-detail-title">{contentData.subject}</h2>
                         <p className="tip-detail-body">{contentData.content}</p>
                         <div
@@ -155,9 +176,9 @@ const Tipcontent = () => {
                         <ol className="tip-list">
                             {ranking.map((item, index) => (
                                 <li key={item.id || index} className="tip-list-item">
-                                    <p className="tip-item-id">{index + 1}</p> {/* 1, 2, 3 순서대로 출력 */}
+                                    <p className="tip-item-id">{index + 1}</p>
                                     <Link
-                                        to={`/tip/read/${item.id}`} // 상세 페이지 경로 수정
+                                        to={`/tip/read/${item.id}`}
                                         className="tip-item-title"
                                     >
                                         {item.subject}

@@ -4,8 +4,6 @@ import Header from './Header';
 import Footer from './Footer';
 import { Outlet, useMatch } from 'react-router-dom';
 import { AuthProvider } from './AuthContext';
-import DevButton from './DevButton';
-import DevLogout from './DevLogout';
 
 function App() {
   // useMatch를 조건문 밖에서 호출

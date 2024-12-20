@@ -43,7 +43,7 @@ const PaginationWithButtons = () => {
       const { title, subtitle, img, link } = buttonData[buttonIndex];
       const color = buttonColors[buttonIndex % buttonColors.length];
       buttons.push( 
-        <Link key={i} to={link} style={{ textDecoration: 'none' }} onClick={()=> {window.scrollTo(0, 0);}}>  {/* Link로 감싸서 페이지 이동 */}
+        <Link key={i} to={link} style={{ textDecoration: 'none' ,backgroundColor: 'inherit'}} onClick={()=> {window.scrollTo(0, 0);}}>  {/* Link로 감싸서 페이지 이동 */}
           <div className="main-button-item" style={{ backgroundColor: color }}>
             <h3>{title}</h3>
             <p>{subtitle}</p>
