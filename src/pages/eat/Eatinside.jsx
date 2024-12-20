@@ -53,7 +53,7 @@ const Eatinside = ({ title, content, img }) => {
               <img src="/assets/img/eat/star-filled.svg" alt="별점" />
               <img src="/assets/img/eat/star.svg" alt="별점" />
               <span className="eat-star-content">
-                과기인 별점 평균 5.0
+                과기인 별점 평균 4.0
               </span>
             </div>
             <div className="eat-content-box-content">

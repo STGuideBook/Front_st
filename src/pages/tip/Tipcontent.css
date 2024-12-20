@@ -33,7 +33,7 @@
     background-color: inherit;
     margin-top: 56px;
     width: 1225px;
-    height: 424px;
+    height: 530px;
     line-height: 1.6;
     font-family: "Pretendard-Regular";
   }
@@ -161,7 +161,7 @@
   }
 
   .tip-ranking-title {
-    margin-top: 20px;
+    margin-top: 50px;
     width: 1235px;
     text-align: start;
     font-family: 'Pretendard-SemiBold';
@@ -203,4 +203,42 @@
         margin-left: 5px;
         background-color: inherit;
     }
+}
+
+.tip-edit-form {
+  margin-top: 30px;
+  position: relative;
+  width: 1235px;
+  height: 357px;
+  background-color: white;
+  border-radius: 30px;
+}
+
+.tip-edit-buttons{
+  position: absolute;
+  bottom: -70px;
+  right: 0px;
+}
+
+.tip-submit-button {
+  width: 166px;
+  height: 58px;
+  background-color: #627DFF;
+  border: none;
+  border-radius: 30px;
+  font-size: 24px;
+  color: white;
+  font-family: 'Pretendard-SemiBold';
+}
+
+.tip-cancel-button{
+  margin-left: 15px;
+  height: 58px;
+  width: 90px;
+  background-color: #494949;
+  border: none;
+  border-radius: 30px;
+  font-size: 20px;
+  color: white;
+  font-family: 'Pretendard-SemiBold';
 }

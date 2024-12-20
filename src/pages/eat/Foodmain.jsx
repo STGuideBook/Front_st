@@ -5,7 +5,7 @@ import Itemmain from "./components/Itemmain";
 const Foodmain = () => {
     // 샘플 데이터 리스트
     const foodList = [
-        { id: 1, title: "가게명", img: "/assets/img/eat/empty.svg" },
+        { id: 1, title: "신가네칼국수", img: "/assets/img/eat/empty.svg" },
         { id: 2, title: "가게명", img: "/assets/img/eat/empty.svg" },
         { id: 3, title: "가게명", img: "/assets/img/eat/empty.svg" },
         { id: 4, title: "가게명", img: "/assets/img/eat/empty.svg" },
